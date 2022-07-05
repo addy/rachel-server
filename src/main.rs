@@ -1,6 +1,6 @@
 use axum::Router;
 use controllers::{
-    art_controller::ArtController, charge_controller::ChargeController,
+    art_controller::ArtController,
     contact_controller::ContactController,
 };
 use dotenv::dotenv;
@@ -26,13 +26,11 @@ async fn main() {
 
     // Controllers
     let art_controller = ArtController::new();
-    let charge_controller = ChargeController::new();
     let contact_controller = ContactController::new();
 
     // Routing & Layers
     let routes = Router::new()
         .merge(art_controller.router())
-        .merge(charge_controller.router())
         .merge(contact_controller.router())
         .layer(
             ServiceBuilder::new()
