@@ -1,7 +1,3 @@
-# Rachel's Portfolio API
-
-# Dev Setup
-
 ## Prerequisites
 - Rust - use [rustup](https://rustup.rs/)
 - Install dependencies
